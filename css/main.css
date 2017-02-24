@@ -1,0 +1,35 @@
+#text_area {
+    display: block;
+    border:none;
+    width: 100%;
+    background-color: #c1deeb;
+    vertical-align: center;
+    padding: .8em;
+}
+
+#text_area::-webkit-input-placeholder {
+    color: rgba(84, 88, 91, 0.84);
+    font-size: 15px;
+}
+
+#text_area:focus {
+    background: #fff;
+    border-color: #5e97b0;
+    transition: border-color .4s, background-color .4s;
+}
+
+#activityTotalCost{
+    font-size: 23px;
+    margin-top: -5px;
+    margin-bottom: -15px;
+}
+
+.disabled {
+    color: grey;
+}
+
+.error_alert {
+    color: red;
+    font-size: 14px;
+    display: block;
+}
