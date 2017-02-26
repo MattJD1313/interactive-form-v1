@@ -274,35 +274,45 @@ function creditCardValidation() {
         if (creditCardNum.value == '') {
             creditCard.children[0].firstElementChild.style.color = 'red';
             alert('Please enter a valid credit card number');
+            errorLog.push('creditCard');
             //Validates length of the credit card number.
         } else if (creditCardNum.value.replace(/\s/g, "").length != 16) {
             creditCard.children[0].firstElementChild.style.color = 'red';
             alert('A valid credit card number has 16 digits, the number you have entered has ' + creditCardNum.value.length + ' digits.');
+            errorLog.push('creditCard');
         } else {
             creditCard.children[0].firstElementChild.removeAttribute('style');
+            removeError('creditCard');
         }
         if (creditCardZip.value.length != 5) {
             creditCard.children[1].firstElementChild.style.color = 'red';
+            errorLog.push('creditCard');
         } else {
             creditCard.children[1].firstElementChild.removeAttribute('style');
+            removeError('creditCard');
         }
         if (creditCardCvv.value == '') {
             creditCard.children[2].firstElementChild.style.color = 'red';
+            errorLog.push('creditCard');
         } else {
             creditCard.children[2].firstElementChild.removeAttribute('style');
+            removeError('creditCard');
         }
         //Validating the expiration date.
         if (parseInt(creditCardExpYear.value) < parseInt(today[0])) {
             creditCard.children[4].previousElementSibling.style.color = 'red';
             creditCard.children[6].previousElementSibling.style.color = 'red';
-            alert('It seems like your credit card expired in ' + creditCardExpYear.value + ' , please enter a valid expiration date.')
+            alert('It seems like your credit card expired in ' + creditCardExpYear.value + ' , please enter a valid expiration date.');
+            errorLog.push('creditCard');
         } else if (parseInt(creditCardExpYear.value) == parseInt(today[0]) && parseInt(creditCardExpMonth.value) < parseInt(today[1])) {
             creditCard.children[4].previousElementSibling.style.color = 'red';
             creditCard.children[6].previousElementSibling.removeAttribute('style');
-            alert('It seems like your credit card expired earlier this year, please enter a valid expiration date.')
+            alert('It seems like your credit card expired earlier this year, please enter a valid expiration date.');
+            errorLog.push('creditCard');
         } else {
             creditCard.children[4].previousElementSibling.removeAttribute('style');
             creditCard.children[6].previousElementSibling.removeAttribute('style');
+            removeError('creditCard');
         }
     }
 }
@@ -367,14 +377,18 @@ function removeErrorMessage(element) {
         elementTitle.removeChild(errorMessage);
     }
     if (errorLog.length != 0) {
-        for (let i = 0; i < errorLog.length; i++) {
-            if(elementTitle == errorLog[i]){
-                errorLog.splice(i,1);
-            }
+        removeError(elementTitle);
+        }
+}
+
+//Removes elements from errorLog array.
+function removeError(searchItem) {
+    for (let i = 0; i < errorLog.length; i++) {
+        if (searchItem == errorLog[i]) {
+            errorLog.splice(i, 1);
         }
     }
 }
-
 /*
 Uses a regular expression to validate the email address format and
 formats the field and displays an error message in real time until
