@@ -337,7 +337,7 @@ function fieldValidation() {
     if(mailField.value == '') {
         errorMessage(mailField,'Oops... it looks like you forgot to enter your email address');
     }else{
-        removeErrorMessage(mailField);
+        validateEmail();
     }
     if(tShirtDesign.selectedIndex == 0){
         errorMessage(document.getElementById('size').parentNode,'Oops... it looks like you forgot to select a t-shirt design');
