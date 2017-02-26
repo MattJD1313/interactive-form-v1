@@ -53,6 +53,7 @@ function removeErrorMessage(element) {
     }
 }
 
+/*
 //Adds click event to trigger validation.
 function button(){
     let button = document.getElementsByTagName('button');
@@ -65,6 +66,11 @@ function button(){
     }
 }
 button();
+*/
+
+
+
+
 
 /*
 Uses a regular expression to validate the email address format and

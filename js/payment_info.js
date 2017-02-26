@@ -37,7 +37,7 @@ function creditCardValidation() {
             creditCard.children[0].firstElementChild.style.color = 'red';
             alert('Please enter a valid credit card number');
             //Validates length of the credit card number.
-        } else if (creditCardNum.value.length != 16) {
+        } else if (creditCardNum.value.replace(/\s/g, "").length != 16) {
             creditCard.children[0].firstElementChild.style.color = 'red';
             alert('A valid credit card number has 16 digits, the number you have entered has ' + creditCardNum.value.length + ' digits.');
         } else {
