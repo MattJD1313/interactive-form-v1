@@ -278,7 +278,7 @@ function creditCardValidation() {
             //Validates length of the credit card number.
         } else if (creditCardNum.value.replace(/\s/g, "").length != 16) {
             creditCard.children[0].firstElementChild.style.color = 'red';
-            alert('A valid credit card number has 16 digits, the number you have entered has ' + creditCardNum.value.length + ' digits.');
+            alert('A valid credit card number has 16 digits, the number you have entered has ' + creditCardNum.value.replace(/\s/g, "").length + ' digits.');
             errorLog.push('creditCard');
         } else {
             creditCard.children[0].firstElementChild.removeAttribute('style');
@@ -286,33 +286,33 @@ function creditCardValidation() {
         }
         if (creditCardZip.value.length != 5) {
             creditCard.children[1].firstElementChild.style.color = 'red';
-            errorLog.push('creditCard');
+            errorLog.push('zip');
         } else {
             creditCard.children[1].firstElementChild.removeAttribute('style');
-            removeError('creditCard');
+            removeError('zip');
         }
         if (creditCardCvv.value == '') {
             creditCard.children[2].firstElementChild.style.color = 'red';
-            errorLog.push('creditCard');
+            errorLog.push('cvv');
         } else {
             creditCard.children[2].firstElementChild.removeAttribute('style');
-            removeError('creditCard');
+            removeError('cvv');
         }
         //Validating the expiration date.
         if (parseInt(creditCardExpYear.value) < parseInt(today[0])) {
             creditCard.children[4].previousElementSibling.style.color = 'red';
             creditCard.children[6].previousElementSibling.style.color = 'red';
             alert('It seems like your credit card expired in ' + creditCardExpYear.value + ' , please enter a valid expiration date.');
-            errorLog.push('creditCard');
+            errorLog.push('expDate');
         } else if (parseInt(creditCardExpYear.value) == parseInt(today[0]) && parseInt(creditCardExpMonth.value) < parseInt(today[1])) {
             creditCard.children[4].previousElementSibling.style.color = 'red';
             creditCard.children[6].previousElementSibling.removeAttribute('style');
             alert('It seems like your credit card expired earlier this year, please enter a valid expiration date.');
-            errorLog.push('creditCard');
+            errorLog.push('expDate');
         } else {
             creditCard.children[4].previousElementSibling.removeAttribute('style');
             creditCard.children[6].previousElementSibling.removeAttribute('style');
-            removeError('creditCard');
+            removeError('expDate');
         }
     }
 }
