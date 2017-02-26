@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="391783a0-5652-452f-82ef-8154bede39e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,20 +20,20 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="386" column="9" lean-forward="true" selection-start-line="386" selection-start-column="9" selection-end-line="386" selection-end-column="9" />
+            <state relative-caret-position="327">
+              <caret line="371" column="37" lean-forward="true" selection-start-line="371" selection-start-column="37" selection-end-line="371" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
+            <state relative-caret-position="-307">
               <caret line="105" column="46" lean-forward="true" selection-start-line="105" selection-start-column="46" selection-end-line="105" selection-end-column="46" />
               <folding />
             </state>
@@ -226,12 +225,12 @@
       <option name="presentableId" value="Default" />
       <updated>1486619471225</updated>
       <workItem from="1486619472377" duration="147043000" />
-      <workItem from="1488133818818" duration="4054000" />
+      <workItem from="1488133818818" duration="7707000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151097000" />
+    <option name="totallyTimeSpent" value="154750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -325,18 +324,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="105" column="46" lean-forward="true" selection-start-line="105" selection-start-column="46" selection-end-line="105" selection-end-column="46" />
+        <state relative-caret-position="327">
+          <caret line="371" column="37" lean-forward="true" selection-start-line="371" selection-start-column="37" selection-end-line="371" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="386" column="9" lean-forward="true" selection-start-line="386" selection-start-column="9" selection-end-line="386" selection-end-column="9" />
+        <state relative-caret-position="-307">
+          <caret line="105" column="46" lean-forward="true" selection-start-line="105" selection-start-column="46" selection-end-line="105" selection-end-column="46" />
           <folding />
         </state>
       </provider>

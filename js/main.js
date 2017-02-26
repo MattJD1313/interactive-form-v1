@@ -29,6 +29,9 @@ const creditCardExpYear = document.getElementById('exp-year');
 const payPal = creditCard.nextElementSibling;
 const bitCoin = creditCard.nextElementSibling.nextElementSibling;
 const paymentTypes = [[creditCard,'credit card'],[payPal,'paypal'],[bitCoin,'bitcoin']];
+//VALIDATION VARIABLES
+const button = document.getElementsByTagName('button')[0];
+let errorLog = [];
 
 /*
  *************************************************
@@ -57,6 +60,14 @@ paymentMethod.addEventListener('change', function () {
         removeErrorMessage(paymentMethod)
     }
 });
+//VALIDATION LISTENERS
+button.addEventListener('click',function(event){
+    fieldValidation();
+    creditCardValidation();
+    if(errorLog.length != 0){event.preventDefault()}
+});
+
+
 
 /*
 *************************************************
@@ -344,6 +355,7 @@ function errorMessage(element,message) {
         elementAlertSpan.appendChild(elementTitleAlertText);
         elementAlertSpan.className = 'error_alert';
         elementTitle.appendChild(elementAlertSpan);
+        errorLog.push(elementTitle);
     }
 }
 
@@ -354,20 +366,14 @@ function removeErrorMessage(element) {
     if (elementTitle.children.length != 0) {
         elementTitle.removeChild(errorMessage);
     }
-}
-
-//Adds click event to trigger validation.
-function button(){
-    let button = document.getElementsByTagName('button');
-    for (let i = 0; i < button.length ; i++){
-        button[i].addEventListener('click',function(event){
-            event.preventDefault();
-            fieldValidation();
-            creditCardValidation();
-        });
+    if (errorLog.length != 0) {
+        for (let i = 0; i < errorLog.length; i++) {
+            if(elementTitle == errorLog[i]){
+                errorLog.splice(i,1);
+            }
+        }
     }
- }
- button();
+}
 
 /*
 Uses a regular expression to validate the email address format and
